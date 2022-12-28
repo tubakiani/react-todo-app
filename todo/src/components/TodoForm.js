@@ -1,35 +1,30 @@
-import React , { useState } from 'react'
+import React ,{ useState } from 'react'
+import {v4} from 'uuid';
 
 
-function TodoForm(props) {
-    const [input, setInput] = useState('');
+function TodoForm({addTodo}) {
+    const[todo , setTodo] = useState({
+        id:"",
+        task:"",
+        completed:false
+    });
 
-    const changeHandler = e =>{
-        setInput(e.target.value)
+    const submitHandler = event =>{
+        event.preventDefault();
+        if(todo.task.trim()){
+            addTodo({ ...todo, id: {v4}});
+            setTodo({...todo, task:""})
+        }
+    }
+     
+    const changeHandler = event =>{
+        setTodo({...todo, task:event.target.value});
     }
 
-    const submitHandler = e =>{
-        e.preventDefault();
-
-        props.onSubmit({
-            id: Math.floor(Math.random() * 10000),
-            text:input
-        });
-
-        setInput('');
-    };
-    
-
   return (
-    <form className='todo-form'onSubmit={submitHandler}> 
-        <input type="text" 
-        placeholder='Add todo' 
-        value={input} 
-        name="text" 
-        className='todo-input'
-        onChange={changeHandler}
-        />
-        <button className='todo-btn'>Add Todo</button>
+    <form onSubmit={submitHandler}>
+        <input type="text" value={todo.task} placeholder="Enter todo" onChange={changeHandler}/>
+        <button type='submit'>Add Task</button>
     </form>
   )
 }
