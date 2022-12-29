@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
-import './App.css';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
+import styles from './components/Todomodule.css';
+
 
 // const LOCAL_STORAGE_KEY = "react-todo-list-todos";
 
@@ -43,9 +44,12 @@ function App() {
   } 
   
   return (
-    <div className="App">
-      <TodoForm addTodo={addTodo}/>
-      <TodoList todos={todos} toggleComplete={toggleComplete} removeTodo={removeTodo}/>
+    <div className='container'>
+      <div className='cart'>
+        <h1>What's your plan today?</h1>
+        <TodoForm addTodo={addTodo}/>
+        <TodoList todos={todos} toggleComplete={toggleComplete} removeTodo={removeTodo}/>
+      </div>
     </div>
   );
 }

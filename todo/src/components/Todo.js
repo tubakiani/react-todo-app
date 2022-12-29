@@ -11,12 +11,14 @@ function Todo({todo,toggleComplete,removeTodo}) {
   }
 
   return (
-    <div>
-      <input type="checkbox" onChange={changeHandler}/>
-      <li>
-        {todo.task}
-      </li>
-      <button onClick={clickHandler}>x</button>
+    <div className='todo'>
+      <div className='todo-list'>
+        <li>
+          {todo.task}
+        </li>
+        <input type="checkbox" onChange={changeHandler}/>
+        <button onClick={clickHandler}>x</button>
+      </div>
     </div>
   )
 }

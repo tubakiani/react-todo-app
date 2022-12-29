@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(204, 152, 241);
+}
+.cart{
+    background-color: rgb(207, 126, 248);
+    width: 600px;
+    height: 500px;
+    padding: 10px;
+    border-radius: 15px;
+}
+.cart h1{
+    text-align: center;
+    margin-bottom: 25px;
+    color: rgb(60, 58, 58);
+    font-size: 40px;
+}
+
+.todoform input{
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(254, 253, 253);
+    padding: 10px;
+    font-size: 15px;
+    color: rgb(103, 102, 102);
+    margin-left: 90px;
+    
+}
+.todoform input::placeholder{
+    color: rgb(106, 103, 103);
+    opacity: 50%;
+}
+.todoform button{
+    margin-left: 10px;
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(172, 84, 173);
+    padding: 10px;
+    color: #fff;
+}
+.todo{
+    display: flex;
+    align-items: center;
+    justify-content: last baseline;
+    margin-left:120px;
+    margin-top: 10px;
+}
+.todo {
+    display: flex;
+}
+.todo-list{
+    display: flex;
+    padding: 5px;
+}
+.todo input{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px; 
+    border: none;
+}
+.todo button{
+    width: 20px;
+    height: 20px;
+   margin-left: 10px; 
+   border: none;
+   border-radius: 2px;
+   background-color: #fff;
+}
+
